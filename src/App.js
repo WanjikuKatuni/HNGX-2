@@ -1,4 +1,5 @@
 import { Featured } from "./Components/Featured";
+import { Footer } from "./Components/Footer";
 import { Landing } from "./Components/Landing";
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
     <div className="App">
       <Landing/>
       <Featured/>
+      <Footer/>
     </div>
   );
 }
