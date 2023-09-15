@@ -1,14 +1,17 @@
-import { Featured } from "./Components/Featured";
-import { Footer } from "./Components/Footer";
-import { Landing } from "./Components/Landing";
+import { MovieDetails } from "./Components/MovieDetails";
+import { Landing } from "./Pages/Landing";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <Landing/>
-      <Featured/>
-      <Footer/>
-    </div>
+    <>
+      <Router>
+          <Routes>
+            <Route path="/" element={< Landing/>} />
+            <Route path="/movie/:id" element={<MovieDetails/>} />
+          </Routes>
+      </Router>
+    </>
   );
 }
 

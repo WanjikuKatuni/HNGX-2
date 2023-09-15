@@ -2,6 +2,8 @@ import React from "react";
 import tomato from "../assets/tomato.png";
 import imdb from "../assets/imdbi.png";
 import like from "../assets/Favorite.png";
+import { LibraryAddCheckTwoTone } from "@mui/icons-material";
+import { Link } from "react-router-dom";
 
 
 
@@ -9,7 +11,7 @@ import like from "../assets/Favorite.png";
 const API_IMG = "https://image.tmdb.org/t/p/w500/"
 
 
-export const MovieCard = ({poster_path, title, release_date, vote_average}) => {
+export const MovieCard = ({id, poster_path, title, release_date, vote_average}) => {
 
     // console.log(title)
 
@@ -18,8 +20,9 @@ export const MovieCard = ({poster_path, title, release_date, vote_average}) => {
        <div className="ml-[98px]">
 
         <div data-testid="movie-card" className=" movie-card relative max-w-sm rounded overflow-hidden shadow-lg mt-10">
-            <img data-testid="movie-poster" className="w-full" src={API_IMG+poster_path} 
-            alt="movie-poster" />
+            <Link to={ `/movie/${id}`} >
+                <img data-testid="movie-poster" className="w-full" src={API_IMG+poster_path} alt="movie-poster" />
+            </Link>
             
             <div className="items-center">
                 <div className="absolute top-2 left-2 bg-[#f3f4f6] opacity-60 text-black uppercase text-sm font-semibold px-2 py-1 mt-6 ml-5 rounded-xl shadow-lg hover:text-white hover:bg-black">

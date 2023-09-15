@@ -7,6 +7,9 @@ import poster from "../assets/Poster.png";
 import imdb from "../assets/IMDB.png";
 import play from "../assets/Play.png";
 import tomato from "../assets/tomato.png";
+import { Featured } from "./Featured";
+import { Footer } from "../Components/Footer";
+
 
 export const Landing = () => {
   return (
@@ -87,6 +90,9 @@ export const Landing = () => {
           </div>
         </div>
       </div>
+
+      <Featured />
+      <Footer />
     </>
   );
 };
