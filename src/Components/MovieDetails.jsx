@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const API_KEY = "5e5e90381b6933362ff8ad9d6eeda736";
 const API_URL = "https://api.themoviedb.org/3/movie/";
@@ -41,9 +41,11 @@ export const MovieDetails = () => {
             <div className="overview ml-[108px] text-[18px] mr-[198px]">
               <p data-testid="movie-overview">{overview}</p>
             </div>
-            <div className="buttons space-y-4">
-              <button className="bg-[#BE123C] w-[360px] h-[50px] text-white text-md font-medium border-1 rounded-md hover:bg-[#F8E7EB]"> See Showtimes</button>
-              <button className="bg-[#F8E7EB] w-[360px] h-[50px] text-black text-md font-medium border-1 rounded-md hover:bg-[#be123c]">More Watch Options</button>
+            <div className="buttons">
+              <button className="bg-[#BE123C] w-[360px] h-[50px] text-white text-md font-medium border-1 rounded-md hover:bg-[#F8E7EB] mb-6" > See Showtimes</button>
+              <Link to={ `/`}>
+                <button className="bg-[#F8E7EB] w-[360px] h-[50px] text-black text-md font-medium border-1 rounded-md hover:bg-[#be123c]">More Watch Options</button>
+              </Link>
             </div>
           </div>
         </div>
