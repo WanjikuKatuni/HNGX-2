@@ -82,7 +82,7 @@ export const Landing = () => {
             </p>
           </div>
           <div className="play-button">
-            <button className="title-button text-white bg-[#be123c] rounded-md p-2 flex items-center uppercase font-medium text-lg hover:bg-[#be123c]">
+            <button className="title-button text-white bg-[#be123c] rounded-md p-2 flex items-center uppercase font-medium text-lg hover:bg-[#d17f93] hover:text-black">
               {" "}
               <img className="mr-2" src={play} alt="play-icon" />
               Watch Trailer
