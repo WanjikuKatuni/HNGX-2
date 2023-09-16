@@ -8,15 +8,15 @@ const API_IMG = "https://image.tmdb.org/t/p/w500/";
 export const MovieDetails = () => {
   const { id } = useParams();
   const [movieDetails, setMovieDetails] = useState(null);
-  conse [error, setError] = useState(nul)
-  const [loading, setLoading] = useSate(true)
+  const [error, setError] = useState(null)
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     // fetch movie detials based on id
     fetch(`${API_URL}${id}?api_key=${API_KEY}`)
       .then((res) => {
         if (!res.ok) {
-          throw new Erro ("Network response failed")
+          throw new Error ("Network response failed")
         }
         return res.json()
       })

@@ -75,7 +75,7 @@ export const Landing = () => {
           </div>
           {/* info */}
           <div className="title-info pb-3">
-            <p className="text-white font-medium">
+            <p className="text-white font-medium text-lg">
               John Wick is on the run after killing a member of the
               international assassins' guild, and with a $14 million price tag
               on his head, he is the target of hit men and women everywhere.

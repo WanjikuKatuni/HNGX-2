@@ -4,22 +4,35 @@ import { MovieCard } from "../Components/MovieCard";
 
 
 
+const API_URL = "https://api.themoviedb.org/3/movie/popular?api_key=5e5e90381b6933362ff8ad9d6eeda736"
 
 export const Featured = () => {
 
-    const API_URL = "https://api.themoviedb.org/3/movie/popular?api_key=5e5e90381b6933362ff8ad9d6eeda736"
     const [movies, setMovies] = useState([])
+    const [error, setError] = useState(null)
 
     // fetch from api
     useEffect(() => {
-        fetch(API_URL)
-        .then((res)=> res.json())
-        .then(data => {
-            console.log(data)
-            setMovies(data.results)
-        })
+        const fetchData = async () => {
+            try {
+                const response = await fetch(API_URL)
+                if (!response.ok) {
+                    throw new Error (`HTTP error! status: ${response.status}`)
+                }
+                const data = await response.json()
+                setMovies(data.results)
+            }
+            catch (error) {
+                setError(error)
+            }
+        };
+        fetchData()
 
     }, [])
+
+    if (error) {
+        return <div> Error fetching data: {error.message} </div>
+    }
 
     // get first 10 movies
     const firstTenMovies = movies.slice(0,10)
