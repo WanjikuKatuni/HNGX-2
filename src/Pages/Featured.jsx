@@ -4,7 +4,7 @@ import { MovieCard } from "../Components/MovieCard";
 
 
 
-const API_URL = "https://api.themoviedb.org/3/movie/popular?api_key=5e5e90381b6933362ff8ad9d6eeda736"
+const API_URL = "https://api.themoviedb.org/3/movie/top_rated?api_key=5e5e90381b6933362ff8ad9d6eeda736"
 
 export const Featured = () => {
 

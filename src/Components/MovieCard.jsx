@@ -2,7 +2,7 @@ import React from "react";
 import tomato from "../assets/tomato.png";
 import imdb from "../assets/imdbi.png";
 import like from "../assets/Favorite.png";
-import { LibraryAddCheckTwoTone } from "@mui/icons-material";
+// import { LibraryAddCheckTwoTone } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 
 
