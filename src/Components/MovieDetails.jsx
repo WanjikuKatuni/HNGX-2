@@ -5,6 +5,14 @@ const API_KEY = "5e5e90381b6933362ff8ad9d6eeda736";
 const API_URL = "https://api.themoviedb.org/3/movie/";
 const API_IMG = "https://image.tmdb.org/t/p/w500/";
 
+
+// conbvert minutes to hours 
+const convertMinutesToHours = (minutes) => {
+  const hours = Math.floor(minutes / 60);
+  const remainingMinutes = minutes % 60;
+  return `${hours}h ${remainingMinutes}min`;
+};
+
 export const MovieDetails = () => {
   const { id } = useParams();
   const [movieDetails, setMovieDetails] = useState(null);
@@ -45,6 +53,9 @@ export const MovieDetails = () => {
   // movie details
   const { title, poster_path, release_date, runtime, overview } = movieDetails;
 
+  // runtime to hours and minutes
+  const runtimeInHoursnMinutes = convertMinutesToHours(runtime)
+
   return (
     <>
       <div className="moviedetails bg-[#dadbd3] h-[100vh] grid place-items-center">
@@ -55,7 +66,7 @@ export const MovieDetails = () => {
           <div className="moviedetails flex space-x-4 text-[23px] ml-[108px] mt-8 mb-6">
             <p data-testid="movie-title" className="font-medium">{title}</p>
             <p data-testid="movie-release-date" className="text-slate-600">{release_date}</p>
-            <p data-testid="movie-runtime" className="text-slate-400">{runtime}</p>
+            <p data-testid="movie-runtime" className="text-slate-400">{runtimeInHoursnMinutes}</p>
           </div>
           <div className="flex justify-between items-center mr-[98px]">
             <div className="overview ml-[108px] text-[18px] mr-[198px]">
